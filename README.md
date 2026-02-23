@@ -1,4 +1,6 @@
-![Uploading image.png…]()
+<img width="847" height="708" alt="image" src="https://github.com/user-attachments/assets/aa0394a3-17ac-4ecc-9016-0a8a512ac30f" />
+
+
 💹 Google-Style Currency Converter
 A sleek, responsive currency converter inspired by Google's search results. This tool provides real-time exchange rates and interactive historical price graphs using Chart.js.
 
