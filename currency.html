@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Currency Converter</title>
-  <link rel="stylesheet" href="currency.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Currency & Metal Converter</title>
+    <link rel="stylesheet" href="currency.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
 <body>
-  <div class="container">
-    <h1>💱 Currency Converter</h1>
-    <div class="converter-box">
-      <input type="number" id="amount" placeholder="Enter amount" />
+    <div class="main-card">
+        <div class="display-header">
+            <p id="base-info">1 <span id="from-name-display">US Dollar</span> equals</p>
+            <h1 id="main-result-val">84.45 <span id="to-name-display">Indian Rupee</span></h1>
+            <p id="last-updated">Updating...</p>
+        </div>
 
-      <div class="dropdowns">
-        <select id="fromCurrency">
-          <option value="USD">USD</option>
-          <option value="INR">INR</option>
-          <option value="EUR">EUR</option>
-          <option value="GBP">GBP</option>
-          <option value="JPY">JPY</option>
-        </select>
+        <div class="converter-box">
+            <div class="input-row">
+                <input type="number" id="amount-input" value="1" step="any">
+                <div class="select-box">
+                    <img id="from-icon" src="https://flagsapi.com/US/flat/64.png">
+                    <select id="from-select"></select>
+                </div>
+            </div>
 
-        <span>to</span>
+            <div class="swap-icon">
+                <i class="fa-solid fa-arrow-right-arrow-left" id="swap-btn"></i>
+            </div>
 
-        <select id="toCurrency">
-          <option value="INR">INR</option>
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="GBP">GBP</option>
-          <option value="JPY">JPY</option>
-        </select>
-      </div>
+            <div class="input-row">
+                <input type="number" id="target-input" readonly>
+                <div class="select-box">
+                    <img id="to-icon" src="https://flagsapi.com/IN/flat/64.png">
+                    <select id="to-select"></select>
+                </div>
+            </div>
+        </div>
 
-      <button onclick="convertCurrency()">Convert</button>
-
-      <div class="result" id="result"></div>
+        <div class="chart-section">
+            <div class="time-nav">
+                <button class="t-btn" data-days="1">1D</button>
+                <button class="t-btn" data-days="30">1M</button>
+                <button class="t-btn active" data-days="365">1Y</button>
+                <button class="t-btn" data-days="1825">5Y</button>
+            </div>
+            <div class="chart-container">
+                <canvas id="rateChart"></canvas>
+                <div id="chart-error" class="hidden">Historical graph data only available for fiat currencies.</div>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <script src="currency.js" defer="{{ defer }}"></script>
+    <script src="currency.js"></script>
 </body>
 </html>
