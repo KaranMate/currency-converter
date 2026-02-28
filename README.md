@@ -1,4 +1,5 @@
-<img width="847" height="708" alt="image" src="https://github.com/user-attachments/assets/aa0394a3-17ac-4ecc-9016-0a8a512ac30f" />
+<img width="891" height="833" alt="image" src="https://github.com/user-attachments/assets/6b71f6eb-691e-4b2b-87fb-cf8f35fe069b" />
+
 
 
 💹 Google-Style Currency Converter
